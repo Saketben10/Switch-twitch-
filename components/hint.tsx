@@ -13,12 +13,12 @@ interface Hintprops {
   align?: "start" | "center" | "end";
 }
 
-const Hint = ({ label, side, children, asChild, align }: Hintprops) => {
+const Hint = ({ label, side, children, asChild, align, ...props }: Hintprops) => {
   return (
     <TooltipProvider>
       <Tooltip delayDuration={0}>
         <TooltipTrigger asChild={asChild}>{children}</TooltipTrigger>
-        <TooltipContent side={side} align={align} className="text-black bg-white" >
+        <TooltipContent {...props} side={side} align={align} className="text-black bg-white" >
           <p className="font-semi-bold">{label}</p>
         </TooltipContent>
       </Tooltip>

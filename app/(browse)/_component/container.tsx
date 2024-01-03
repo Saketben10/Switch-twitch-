@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils";
-import { SideBar } from "@/store/side-bar";
+import {  useSideBar } from "@/store/side-bar";
  
 
 interface Containerprops {
@@ -9,9 +9,9 @@ interface Containerprops {
 }
 
 export const Container = ({ children }: Containerprops) => {
-  const { collapsed, onCollapse, onExpand } = SideBar((state) => state);
+  const { collapsed, onCollapse, onExpand } =   useSideBar((state) => state);
   
-  
+
  
  
   
